@@ -5,15 +5,13 @@
 
 //toggle fly (e slide da velocidade do speed do flykkk)
 
-//tab dos creditos e da donate
-
 //ativar comandos por chat, e ate mesmo dar item a quem digitar por exemplo !ballon no chat
 
 //loop eat RedApple
 
 //tool fling (invisible fling tbm talvez)
 
-//sit toggle
+//yeet?
 ]]--
 
 
@@ -34,8 +32,9 @@ local Window = Library:CreateWindow({
 
 local RunService = game:GetService("RunService")
 local speaker = game.Players.LocalPlayer
-local WhiteList = {}
-local blacklist = {}
+
+--[[ local WhiteList = {}
+local blacklist = {} ]]--
 
 --cria uma nova aba
 local Tabs = {
@@ -51,7 +50,7 @@ local Sv = Tabs.Main:AddRightGroupbox('Server')
 local PlayersMalic = Tabs.PlayersMaliciuns:AddLeftGroupbox('Give Tool')
 local PlayersMalic1 = Tabs.PlayersMaliciuns:AddRightGroupbox('Kill Player')
 local PlayersMalic2 = Tabs.PlayersMaliciuns:AddLeftGroupbox('Teleport Player')
-local cmdstab = Tabs.PlayersMaliciuns:AddRightGroupbox('Commands')
+--local cmdstab = Tabs.PlayersMaliciuns:AddRightGroupbox('Commands')
 
 
 
@@ -270,7 +269,7 @@ PlayersMalic2:AddToggle('loopsaveallplayers', {
     Tooltip = "save all players, teleporting to the lobby", -- Information shown when you hover over the toggle
 })
 
-
+--[[
 local printcmds = cmdstab:AddButton('Print Cmds', function()
     print("keep in mind these commands are for in-game players only\n",
     "!ballon\n",
@@ -330,7 +329,7 @@ end)
 
 clearblacklist:AddTooltip('clear the list of those entered')
 clearwhitelist:AddTooltip('clear the list of those entered')
-
+]]--
 
 
 local nop = true
@@ -385,7 +384,7 @@ MyButton1:AddTooltip('go fuck yourself')
 MyButton2:AddTooltip('skill issues')
 serverlow:AddTooltip('you are sad')
 Display:AddTooltip('open the page to vote for the next map')
-printcmds:AddTooltip('hi')
+--printcmds:AddTooltip('hi')
 
 
 LeftGroupBox:AddSlider('ws', {
@@ -458,7 +457,7 @@ local function getPlayer(str)
     end
 end
 
-
+--[[
 local a = true
 Options.blacklistplayer:OnChanged(function()
     if a then
@@ -480,7 +479,7 @@ Toggles.enablecmds:OnChanged(function()
     end
     
 end)
-
+]]--
 
 
 
@@ -878,7 +877,7 @@ function DelAndTp()
         if magnitudefarm > 10 then
         tp1(teleport1)
         game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
-        game.Players.LocalPlayer.Character:FindFirstChild('Torso').Velocity = Vector3.new(0,0,0)
+        game.Players.LocalPlayer.Character.Torso.Velocity = Vector3.new(0,0,0)
         end
     end
 end
@@ -1216,7 +1215,7 @@ Toggles.loopgiveallplayers:OnChanged(function()
     end
 end)
 
-
+--[[
 function attachALT(speaker,target,ToolToUse)
     local target1 = game.Players[target]
     if tools(speaker) then
@@ -1307,7 +1306,7 @@ game.Players.PlayerAdded:Connect(function(plr)
 	end)
 end)
 
---[[        outras funcoes externas           ]]--
+]]--
 
 
 
