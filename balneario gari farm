@@ -133,7 +133,7 @@ while wait() do
         getfood()
     end
 end
-
+--
 
 
 
